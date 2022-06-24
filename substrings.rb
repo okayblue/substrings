@@ -1,5 +1,7 @@
 def substrings(string, dictionary)
     # result is a hash with default value of 0
+    # the string is converted to an array, when the current dictionary word is found in the
+    # current string word, 1 is added to it's value in the hash
   dictionary.reduce(Hash.new(0)) do |result, dictionary_word|
     string.downcase.split.each do |string_word|
       if string_word.include?(dictionary_word)
