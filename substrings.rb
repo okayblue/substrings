@@ -1,13 +1,12 @@
 def substrings(string, dictionary)
     # result is a hash with default value of 0
   dictionary.reduce(Hash.new(0)) do |result, dictionary_word|
-    # check if the downcased string includes the dictionary word and add it to the hash
-    if string.downcase.include?(dictionary_word)
-      result[dictionary_word] += 1
-      result
-    else
-        result
+    string.downcase.split.each do |string_word|
+      if string_word.include?(dictionary_word)
+        result[dictionary_word] += 1
+      end
     end
+    result
   end
 end
 
